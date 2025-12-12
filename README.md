@@ -49,8 +49,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    implementation 'com.github.YourUsername:AdvancedSearchBar:1.0.0'
-
+  	        implementation("com.github.Excelsior-Technologies-Community:AdvancedSearchBar:1.0.0")
     // Required for RecyclerView & CardView
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation 'androidx.cardview:cardview:1.0.0'
