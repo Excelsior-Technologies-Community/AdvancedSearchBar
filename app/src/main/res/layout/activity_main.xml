@@ -1,19 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="Advanced Search Bar "
+            android:textColor="#202124"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <!-- Advanced Search Bar (Material 3 style) -->
+        <com.ext.advanced_searchbar.AdvancedSearchBar
+            android:id="@+id/advancedSearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:debounceTime="300"
+            app:hintColor="#8A8A8E"
+            app:hintText="Search anything..."
+            app:iconSize="20dp"
+            app:iconTint="#5F6368"
+            app:searchBarBackgroundColor="#F1F3F4"
+            app:searchBarCornerRadius="10dp"
+            app:searchBarElevation="0dp"
+            app:searchBarPadding="16dp"
+            app:showSearchIcon="true"
+            app:showVoiceIcon="true"
+            app:textColor="#202124"
+            app:textSize="14sp"
+            app:voiceIconSize="24dp" />
+
+        <!-- Suggestions Dropdown Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/suggestionsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/suggestionsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:clipToPadding="false"
+                android:maxHeight="400dp"
+                android:overScrollMode="never"
+                tools:listitem="@layout/item_suggestion" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Optional hint text when suggestions are hidden -->
+        <TextView
+            android:id="@+id/emptyHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="48dp"
+            android:text="Start typing to filter suggestions"
+            android:textColor="#5F6368"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+
+</LinearLayout>
