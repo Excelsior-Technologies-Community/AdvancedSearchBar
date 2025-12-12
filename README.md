@@ -8,15 +8,15 @@
 ---
 ## Preview
 
-| Search Bar | Voice Search |
+| Advanced Search Bar | Voice Search |
 |------------|--------------|
 | <img src="app/src/main/assets/search2.jpeg" width="300" /> | <img src="app/src/main/assets/search1.jpeg" width="300" /> |
 
 <br/>
 
-<p align="center">
-  <img src="app/src/main/assets/video-search.gif" width="350"/>
-</p>
+<div align="center">
+  <img src="app/src/main/assets/video-search.gif" height="400"/>
+</div>
 
 
 ---
